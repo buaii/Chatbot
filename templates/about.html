@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .info strong {
+            display: inline-block;
+            width: 100px;
+            color: #333;
+        }
+        .photo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Me</h1>
+        <img src="{{ photo_url }}" alt="My Photo" class="photo">
+        <div class="info">
+            <p><strong>Name:</strong> {{ name }}</p>
+        </div>
+        <div class="info">
+            <p><strong>Birth:</strong> {{ birth }}</p>
+        </div>
+        <div class="info">
+            <p><strong>University:</strong> {{ university }}</p>
+        </div>
+        <div class="info">
+            <p><strong>Major:</strong> {{ major }}</p>
+        </div>
+        <div class="info">
+            <p><strong>Hobby:</strong> {{ hobby }}</p>
+        </div>
+        <hr>
+        <div class="info">
+            <h2>대외활동</h2>
+            <li>
+                {{ activities1 }}
+            </li>
+            <li>
+                {{ activities2 }}
+            </li>
+        </div>
+        <hr>
+        <div class="info">
+            <h2>프로젝트</h2>
+            <li>
+                {{ projects1 }}
+            </li>
+            <li>
+                {{ projects2 }}
+            </li>
+        </div>
+    </div>
+</body>
+</html>

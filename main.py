@@ -1,10 +1,17 @@
-import uvicorn
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+
+app = FastAPI()
+
+# Static files 설정
+app.mount("/static", StaticFiles(directory="static"), name="static")
 
 LOG = 'debug'
 
 if __name__ == '__main__':
     try:
         if LOG == 'debug':
+            import uvicorn
             uvicorn.run(
                 "api:app",
                 host='0.0.0.0',
@@ -14,6 +21,7 @@ if __name__ == '__main__':
                 reload=True,
             )
         else:
+            import uvicorn
             uvicorn.run(
                 "api:app",
                 host='0.0.0.0',
